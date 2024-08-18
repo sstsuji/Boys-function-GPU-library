@@ -3,9 +3,10 @@ A GPU library for high-throughput evaluation of the Boys function
 
 
 ## The Boys function
-```math
-F_n(x) = \int_0^1 t^{2n} e^{-xt^2} dt
-```
+<div align="center">
+    <img src=definition.png alt=definition>
+</div>
+
 - $n$: non-negative integer
 - $x$: non-negative real number
 
