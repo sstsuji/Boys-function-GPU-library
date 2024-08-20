@@ -3,7 +3,7 @@ A GPU library for high-throughput evaluation of the Boys function
 
 
 ## The Boys function
-$$F_n(x) = \Int_{0}^{1} t^{2n}e^{-xt^2} dt$$
+$$F_n(x) = \int_{0}^{1} t^{2n}e^{-xt^2} dt$$
 - $n$: non-negative integer
 - $x$: non-negative real number
 
@@ -41,7 +41,7 @@ export GMP_ROOT=/path/to/gmp/root
 
 ### Boys function GPU library
 - Source files in `src/` are individually compiled to object files in `obj/`
-- Linked executable binary file is generated in `bin/`
+- Linked executable binary files is generated in `bin/`
 ```bash
 git clone https://github.com/sstsuji/Boys-function-GPU-library.git
 cd Boys-function-GPU-library
