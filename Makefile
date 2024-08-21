@@ -7,12 +7,23 @@ OBJ_DIR := obj
 BIN_DIR := bin
 GMP_DIR := ${GMP_ROOT}
 
+# Lookup table parameters
+XI_INTERVAL := 0.03125
+NUM_XI := 1024
+K_MAX := 5
+
 # Compiler and flags
 CXX := g++
 NVCC := nvcc
-CXXFLAGS := -I$(INC_DIR) -I$(GMP_DIR)/include -std=c++17 -O2 -fopenmp
+CXXFLAGS := -I$(INC_DIR) -I$(GMP_DIR)/include -std=c++17 -O2 -fopenmp \
+			-D LUT_XI_INTERVAL=$(XI_INTERVAL) \
+			-D LUT_NUM_XI=$(NUM_XI) \
+			-D LUT_K_MAX=$(K_MAX)
 NVCCFLAGS := -I$(INC_DIR) -I$(GMP_DIR)/include -std=c++17 -arch=sm_80 \
-			 -Xcompiler -fopenmp
+			 -Xcompiler -fopenmp \
+ 			 -D LUT_XI_INTERVAL=$(XI_INTERVAL) \
+ 			 -D LUT_NUM_XI=$(NUM_XI) \
+ 			 -D LUT_K_MAX=$(K_MAX)
 LDFLAGS := -L$(GMP_DIR)/lib -lgmp
 
 # Source files
@@ -29,7 +40,8 @@ CU_OBJS := $(addprefix $(OBJ_DIR)/, $(notdir $(CU_SRCS:.cu=.o)))
 CPP_OBJS := $(addprefix $(OBJ_DIR)/, $(notdir $(CPP_SRCS:.cpp=.o)))
 
 # Target executable
-TARGET := $(BIN_DIR)/bboys
+BIN := bboys
+TARGET := $(BIN_DIR)/$(BIN)
 
 # Default target
 all: $(TARGET)

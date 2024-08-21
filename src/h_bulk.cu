@@ -1,20 +1,13 @@
 #include <cstdio>
-//#include <cstdint>
 #include <iostream>
 #include <string>
 #include <chrono>
-//#include <numeric>
 
 #include <cuda.h>
 
 #include "mp.h"
 #include "host.h"
 #include "constants.h"
-
-//#include "gmp.cuh"
-//#include "host.cuh"
-//#include "parameters.cuh"
-
 
 
 

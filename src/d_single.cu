@@ -1,8 +1,6 @@
 #include <cmath>
 #include <cuda.h>
 #include "constants.h"
-// #include "gmp.cuh"
-// #include "parameters.cuh"
 
 
 __device__
@@ -105,10 +103,7 @@ void singleBulkEvaluation(Sortkey* g_key, double* g_x,
     }
     /**/
 
-    // g_boys[iid] = sOriginTaylorExpansion(n, x);
-    // g_boys[iid] = sGriddedTaylorExpansion(n, x, g_table);
-    // g_boys[iid] = sRecurrenceRelation(n, x);
-    // g_boys[iid] = sSemiInfiniteInterval(n, x);
+    //g_boys[iid] = sGriddedTaylorExpansion(n, x, g_table);
 }
 
 

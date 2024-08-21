@@ -7,10 +7,23 @@
 using Degree = uint8_t;
 using Sortkey = uint8_t;
 
+
+
+#ifndef LUT_XI_MAX
 #define LUT_XI_MAX 32.0
+#endif
+
+#ifndef LUT_XI_INTERVAL
 #define LUT_XI_INTERVAL 0.03125
+#endif
+
+#ifndef LUT_NUM_XI
 #define LUT_NUM_XI 1024
+#endif
+
+#ifndef LUT_K_MAX
 #define LUT_K_MAX 5
+#endif
 
 #define A_TR 0.352905920120321
 #define B_TR 0.015532762923351

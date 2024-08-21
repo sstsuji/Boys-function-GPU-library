@@ -96,6 +96,7 @@ void incrementalBulkEvaluation(Sortkey* g_key, double* g_x, double* g_boys,
     const Degree method = (key & 0b11000000) >> 6;
     const double x = g_x[iid];
 
+    //*
     if (x == 0.0) {
         for (Degree j = 0; j <= n; ++j) {
             g_boys[num_inputs * j + iid] = __drcp_rn(2 * j + 1);
@@ -107,11 +108,9 @@ void incrementalBulkEvaluation(Sortkey* g_key, double* g_x, double* g_boys,
     else {
         iRecurrenceSemiInfinite(n, x, g_boys, method, num_inputs, iid);
     }
+    /**/
 
-    //incrementalTaylorExpansion(n, g_x[iid], g_F_x, num_calls, iid);
-    //incrementalTaylorInterpolation(n, g_x[iid], g_F_xi, g_F_x, num_calls, iid);
-    //incrementalRecurrenceSemiInfinite(n, g_x[iid], 1, g_F_x, num_calls, iid);
-    //incrementalRecurrenceSemiInfinite(n, g_x[iid], 0, g_F_x, num_calls, iid);
+    //iGriddedTaylorExpansion(n, x, g_boys, g_table, num_inputs, iid);
 }
 
 

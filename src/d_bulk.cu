@@ -118,13 +118,13 @@ void deviceBulkEvaluation(Degree* h_n, double* h_x, double* h_boys,
         if (scenario == "single") {
             cudaEventRecord(begin);
             singleBulkEvaluation<<<blocks, threads>>>(d_key, d_x, d_boys, d_boys_grid, d_counter);
-            // singleBulkEvaluation<<<blocks, threads>>>(d_key_sorted, d_x_sorted, d_boys, d_boys_grid, d_counter);
+            //singleBulkEvaluation<<<blocks, threads>>>(d_key_sorted, d_x_sorted, d_boys, d_boys_grid, d_counter);
             cudaEventRecord(end);
         }
         else if (scenario == "incremental") {
             cudaEventRecord(begin);
             incrementalBulkEvaluation<<<blocks, threads>>>(d_key, d_x, d_boys, d_boys_grid, d_counter, num_inputs);
-            // incrementalBulkEvaluation<<<blocks, threads>>>(d_key_sorted, d_x_sorted, d_boys, d_boys_grid, d_counter, num_inputs);
+            //incrementalBulkEvaluation<<<blocks, threads>>>(d_key_sorted, d_x_sorted, d_boys, d_boys_grid, d_counter, num_inputs);
             cudaEventRecord(end);
         }
         cudaEventSynchronize(end);
@@ -145,6 +145,7 @@ void deviceBulkEvaluation(Degree* h_n, double* h_x, double* h_boys,
     printf("key generation: %.2f [ms]\n", kernel_time["key"]);
     printf("input sorting: %.2f [ms]\n", kernel_time["sort"]);
     printf("boys evaluation: %.2f [ms]\n", kernel_time["boys"]);
+    printf("total: %.2f [ms]\n", kernel_time["key"] + kernel_time["sort"] + kernel_time["boys"]);
 
     cudaFree(d_n);
     cudaFree(d_x);

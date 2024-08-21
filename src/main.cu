@@ -1,3 +1,13 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
+
 #include <string>
 #include <cstdint>
 #include <cstdio>
@@ -19,26 +29,24 @@
 int main(int argc, char* argv[])
 {
     // usage
-    if (argc != 5) {
+    if (argc != 7) {
         std::cerr << "Usage: " << argv[0] \
-                  << " <host or device> <bulk or taylor> <single or incremental> <run or test>" \
+                  << " <host or device> <single or incremental> <run or test> <#inputs> <max n> <max x>" \
                   << std::endl;
         std::exit(EXIT_FAILURE);
     }
 
     // parameters for bulk evaluation of the Boys function
-    // const int num_inputs = std::pow(2, std::stoi(argv[1]));
-    // const Degree n_max = std::stoi(argv[2]); 
-    // const double x_max = std::stod(argv[3]);
-
     const std::string HorD = argv[1];
-    const std::string experiment = argv[2];
-    const std::string scenario = argv[3];
-    const std::string mode = argv[4];
+    const std::string scenario = argv[2];
+    const std::string mode = argv[3];
+    const int num_inputs = std::pow(2, std::stoi(argv[4]));
+    const Degree n_max = std::stoi(argv[5]); 
+    const double x_max = std::stod(argv[6]);
 
-    int num_inputs = 1U << 22;
-    const Degree n_max = 24;
-    const double x_max = 40.0;
+    // int num_inputs = 1U << 22;
+    // const Degree n_max = 24;
+    // const double x_max = 40.0;
 
     // input parameter check
     if (num_inputs > 1U << 27 || n_max > 24 || x_max < 0.0 || x_max > 40.0) {
@@ -46,6 +54,8 @@ int main(int argc, char* argv[])
         std::exit(EXIT_FAILURE);
     }
 
+    printf("\n");
+    std::cout << HorD << " " << scenario << " evaluation" << std::endl;
     printf("---<INPUT PARAMETERS>---\n");
     printf("#inputs: %d\n", num_inputs);
     printf("n range: 0 <= n <= %d\n", n_max);

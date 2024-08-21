@@ -156,6 +156,7 @@ void testBoysEvaluation(Degree* ns, double* xs, double* boys, int num_inputs,
                 if (ppp < 0) {
                     std::cerr << "Error: numerical error over " << error_tol_d \
                               << std::endl;
+                    std::cerr << "Please test with unsorted input array" << std::endl;
                     std::exit(EXIT_FAILURE);
                 }
             }

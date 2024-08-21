@@ -41,7 +41,7 @@ export GMP_ROOT=/path/to/gmp/root
 
 ### Boys function GPU library
 - Source files in `src/` are individually compiled to object files in `obj/`
-- Linked executable binary files is generated in `bin/`
+- Linked executable binary files are generated in `bin/`
 ```bash
 git clone https://github.com/sstsuji/Boys-function-GPU-library.git
 cd Boys-function-GPU-library
@@ -56,4 +56,4 @@ make
 
 
 ## License
-This library is dual-licensed, under the conditions of the GNU Lesser General Public License version 3 (LGPL-3.0), or the GNU General Public License version 2 (GPL-2.0).
+This library is dual-licensed, under the conditions of the GNU Lesser General Public License version 3 (LGPL-3.0), and the GNU General Public License version 2 (GPL-2.0).
