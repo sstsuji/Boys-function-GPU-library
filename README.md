@@ -67,16 +67,17 @@ OMP_NUM_THREADS=$(nproc) ./bin/"binary_name" host single run 22 24 40.0    # CPU
 
 # Perform numerical tests of the bulk evaluation
 # Recommend small #inputs due to lots of time for testing
+# This test does not support sorted input array
 ./bin/"binary_name" device single test 15 24 40.0    # GPU execution
 ./bin/"binary_name" host single test 15 24 40.0    # CPU execution
 ```
 
 ## Reproduce experimental results
 
--  
+- Run shell scripts in `run/` to iterate binary execution
 ```bash
 cd run/
-source taylor.sh "binary_name"    # Parameter search for a lookup table of the Gridded Taylor expansion method
+source taylor.sh "binary_name"    # Parameter search for lookup table of Gridded Taylor expansion method
 source bulk.sh "binary_name"    # bulk evaluation with scaling #inputs
 ```
 
