@@ -1,4 +1,4 @@
-# Boys-function-GPU-library
+# Boys function GPU library
 A GPU library for high-throughput evaluation of the Boys function
 
 
@@ -41,19 +41,61 @@ export GMP_ROOT=/path/to/gmp/root
 
 ### Boys function GPU library
 - Source files in `src/` are individually compiled to object files in `obj/`
-- Linked executable binary files are generated in `bin/`
+- A linked executable binary file is generated in `bin/`
 ```bash
 git clone https://github.com/sstsuji/Boys-function-GPU-library.git
 cd Boys-function-GPU-library
-make
+make BIN="binary_name"
 ```
 
 
 ## Usage
+- Specify the evaluation scenario and input parameters using command-line arguments
+```bash
+# Command-line arguments: host/device single/incremental run/test #inputs n_max x_max
 
+# Perform the bulk evaluation of the Boys function
+./bin/"binary_name" device single run 22 24 40.0    # GPU execution
+OMP_NUM_THREADS=$(nproc) ./bin/"binary name" host single run 22 24 40.0    # CPU execution
 
-## Experimental results
+# Perform numerical tests of the bulk evaluation
+# Recommend small #inputs due to lots of time for testing
+./bin/"binary_name" device single test 15 24 40.0    # GPU execution
+./bin/"binary_name" host single test 15 24 40.0    # CPU execution
+```
+
+<!-- ## Reproduce -->
 
 
 ## License
 This library is dual-licensed, under the conditions of the GNU Lesser General Public License version 3 (LGPL-3.0), and the GNU General Public License version 2 (GPL-2.0).
+
+<!-- ## Citation -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
