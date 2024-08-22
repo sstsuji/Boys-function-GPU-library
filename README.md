@@ -74,7 +74,7 @@ OMP_NUM_THREADS=$(nproc) ./bin/"binary_name" host single run 22 24 40.0    # CPU
 
 ## Reproduce experimental results
 
-- Run shell scripts in `run/` to iterate binary execution
+- Run shell scripts in `run/` to iterate the binary execution
 ```bash
 cd run/
 source taylor.sh "binary_name"    # Parameter search for lookup table of Gridded Taylor expansion method
@@ -83,7 +83,7 @@ source bulk.sh "binary_name"    # bulk evaluation with scaling #inputs
 
 
 ## License
-This library is dual-licensed, under the conditions of the GNU Lesser General Public License version 3 (LGPL-3.0), and the GNU General Public License version 2 (GPL-2.0).
+This library is dual-licensed, under the conditions of the GNU Lesser General Public License version 3 ([LGPL-3.0](LICENSE/LGPLv3.txt)), and the GNU General Public License version 2 ([GPL-2.0](LICENSE/GPLv2.txt)).
 
 <!-- ## Citation -->
 
