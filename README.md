@@ -1,14 +1,17 @@
 # Boys function GPU library
+
 A GPU library for high-throughput evaluation of the Boys function
 
 
 ## The Boys function
+
 $$F_n(x) = \int_{0}^{1} t^{2n}e^{-xt^2} dt$$
 - $n$: non-negative integer
 - $x$: non-negative real number
 
 
 ## Requirements
+
 - Hardware
     - OS: Linux
     - CPU: x86-64 architecture
@@ -20,6 +23,7 @@ $$F_n(x) = \int_{0}^{1} t^{2n}e^{-xt^2} dt$$
 
 
 ## Limitations
+
 - Input range for the Boys function: $0 \le n \le 24$
 - Number of input pairs $(n, x)$ is constrained by the available GPU global meomry size
 
@@ -31,6 +35,7 @@ $$F_n(x) = \int_{0}^{1} t^{2n}e^{-xt^2} dt$$
 ```bash
 # Download the GMP source from: https://gmplib.org/#DOWNLOAD
 # Reference for this installation: https://gmplib.org/manual/Installing-GMP
+
 ./configure --prefix=/path/to/gmp/root
 make
 make check
@@ -45,18 +50,20 @@ export GMP_ROOT=/path/to/gmp/root
 ```bash
 git clone https://github.com/sstsuji/Boys-function-GPU-library.git
 cd Boys-function-GPU-library
+
 make BIN="binary_name"
 ```
 
 
 ## Usage
+
 - Specify the evaluation scenario and input parameters using command-line arguments
 ```bash
 # Command-line arguments: host/device single/incremental run/test #inputs n_max x_max
 
 # Perform the bulk evaluation of the Boys function
 ./bin/"binary_name" device single run 22 24 40.0    # GPU execution
-OMP_NUM_THREADS=$(nproc) ./bin/"binary name" host single run 22 24 40.0    # CPU execution
+OMP_NUM_THREADS=$(nproc) ./bin/"binary_name" host single run 22 24 40.0    # CPU execution
 
 # Perform numerical tests of the bulk evaluation
 # Recommend small #inputs due to lots of time for testing
@@ -64,7 +71,14 @@ OMP_NUM_THREADS=$(nproc) ./bin/"binary name" host single run 22 24 40.0    # CPU
 ./bin/"binary_name" host single test 15 24 40.0    # CPU execution
 ```
 
-<!-- ## Reproduce -->
+## Reproduce experimental results
+
+-  
+```bash
+cd run/
+source taylor.sh "binary_name"    # Parameter search for a lookup table of the Gridded Taylor expansion method
+source bulk.sh "binary_name"    # bulk evaluation with scaling #inputs
+```
 
 
 ## License
