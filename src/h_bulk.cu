@@ -1,3 +1,12 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
 #include <cstdio>
 #include <iostream>
 #include <string>
@@ -8,9 +17,6 @@
 #include "mp.h"
 #include "host.h"
 #include "constants.h"
-
-
-
 
 
 void hostBulkEvaluation(Degree* n, double* x, double* boys, 

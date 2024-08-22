@@ -1,3 +1,12 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
 #include <cmath>
 #include <omp.h>
 

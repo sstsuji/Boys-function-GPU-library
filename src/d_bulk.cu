@@ -1,3 +1,12 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
 #include <cstdio>
 #include <string>
 #include <map>
@@ -157,5 +166,4 @@ void deviceBulkEvaluation(Degree* h_n, double* h_x, double* h_boys,
     cudaFree(d_counter);
     cudaFree(d_tmp);
 }
-
 

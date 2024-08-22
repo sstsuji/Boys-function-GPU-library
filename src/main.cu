@@ -7,7 +7,6 @@ information of Fujitsu Limited and Hiroshima University.
 /*******************************************************/
 
 
-
 #include <string>
 #include <cstdint>
 #include <cstdio>
@@ -20,10 +19,7 @@ information of Fujitsu Limited and Hiroshima University.
 #include "device.cuh"
 #include "constants.h"
 
-
 #include <cuda.h>
-
-
 
 
 int main(int argc, char* argv[])
@@ -116,6 +112,3 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-
-
-

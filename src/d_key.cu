@@ -1,3 +1,12 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
 #include <cuda.h>
 #include "constants.h"
 
@@ -35,5 +44,6 @@ void generateKeyIncremental(Degree *g_n, double* g_x, Sortkey* g_key)
     }
     g_key[tid] = (method << 6) | n;
 }
+
 
 

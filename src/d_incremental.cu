@@ -1,3 +1,12 @@
+/*******************************************************
+Copyright Fujitsu Limited and Hiroshima University 2023
+All rights reserved.
+
+This software is the confidential and proprietary 
+information of Fujitsu Limited and Hiroshima University.
+/*******************************************************/
+
+
 #include <cmath>
 #include <cuda.h>
 #include "constants.h"
@@ -112,9 +121,4 @@ void incrementalBulkEvaluation(Sortkey* g_key, double* g_x, double* g_boys,
 
     //iGriddedTaylorExpansion(n, x, g_boys, g_table, num_inputs, iid);
 }
-
-
-
-
-
 
