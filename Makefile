@@ -38,7 +38,7 @@ CU_SRCS := main.cu mp.cu h_bulk.cu d_bulk.cu d_key.cu \
 CPP_SRCS := h_single.cpp h_incremental.cpp
 
 # Add directory prefix to source files
-CU_SRSC := $(addprefix $(SRC_DIR)/, $(CU_SRCS))
+CU_SRCS := $(addprefix $(SRC_DIR)/, $(CU_SRCS))
 CPP_SRCS := $(addprefix $(SRC_DIR)/, $(CPP_SRCS))
 
 # Object files
