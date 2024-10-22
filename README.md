@@ -53,7 +53,7 @@ export GMP_ROOT=/path/to/gmp/root
 git clone https://github.com/sstsuji/Boys-function-GPU-library.git
 cd Boys-function-GPU-library
 
-make BIN="binary_name"
+make BIN=bboys # Binary name can be changed by specifying BIN
 ```
 
 
@@ -64,14 +64,14 @@ make BIN="binary_name"
 # Command-line arguments: host/device single/incremental run/test #inputs n_max x_max
 
 # Perform the bulk evaluation of the Boys function
-./bin/"binary_name" device single run 22 24 40.0    # GPU execution
-OMP_NUM_THREADS=$(nproc) ./bin/"binary_name" host single run 22 24 40.0    # CPU execution
+./bin/bboys device single run 22 24 40.0    # GPU execution
+OMP_NUM_THREADS=$(nproc) ./bin/bboys host single run 22 24 40.0    # CPU execution
 
 # Perform numerical tests of the bulk evaluation
 # Recommend small #inputs due to lots of time for testing
 # This test does not support sorted input array
-./bin/"binary_name" device single test 15 24 40.0    # GPU execution
-./bin/"binary_name" host single test 15 24 40.0    # CPU execution
+./bin/bboys device single test 15 24 40.0    # GPU execution
+./bin/bboys host single test 15 24 40.0    # CPU execution
 ```
 
 ## Reproduce experimental results
@@ -79,8 +79,8 @@ OMP_NUM_THREADS=$(nproc) ./bin/"binary_name" host single run 22 24 40.0    # CPU
 - Run shell scripts in `run/` to iterate the binary execution
 ```bash
 cd run/
-source taylor.sh "binary_name"    # Parameter search for lookup table of Gridded Taylor expansion method
-source bulk.sh "binary_name"    # bulk evaluation with scaling #inputs
+source taylor.sh bboys    # Parameter search for lookup table of Gridded Taylor expansion method
+source bulk.sh bboys    # bulk evaluation with scaling #inputs
 ```
 
 
